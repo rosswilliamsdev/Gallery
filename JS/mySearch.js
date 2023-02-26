@@ -3,16 +3,17 @@ const photoSearch = document.getElementById("search");
 photoSearch.addEventListener("keyup", e => {
     let currentValue = e.target.value.toLowerCase();
     let photos = document.querySelectorAll("img");
-    let captions = img.getAttribute("data-caption");
 
     photos.forEach(photo => {
-        if (captions.toLowerCase().includes(currentValue)) {
+        const caption = photo.getAttribute('data-caption');
+        if (caption.toLowerCase().includes(currentValue)) {
             photo.style.display = "block";
         } else {
             photo.style.display = "none";
         }
     });
 });
+
 
 
 
